@@ -1,6 +1,11 @@
-console.log('Welcome to HomePlate')
+'use strict';
 
 
-function HomePlate(){
-	
-}
+var homePlate = angular.module('homePlateApp', ['ngRoute'])
+
+.config(['$routeProvider', function($routeProvider) {
+
+  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
+  $routeProvider.otherwise({redirectTo: '/home'});
+
+}]);
