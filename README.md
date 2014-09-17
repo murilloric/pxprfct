@@ -3,7 +3,8 @@ PxPrfct.com - HomePlate
 
 Welcome to HomePlate. If you wanna hit home runs you best start from home plate.
 <br/>
-to run locally:
+<br/>
+<b>To run locally:</b>
 
 1: Clone the pxprfct repo
 <br/>
