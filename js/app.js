@@ -1,6 +1,6 @@
-console.log('hello world')
+console.log('Welcome to HomePlate')
 
 
-function helloWorld(){
-	alert('hello world')
+function HomePlate(){
+	
 }
