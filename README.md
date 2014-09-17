@@ -1,4 +1,4 @@
-pxprfct - HomePlate
+PxPrfct.com - HomePlate
 =======
 
 Welcome to HomePlate. If you wanna hit home runs you best start from home plate.
