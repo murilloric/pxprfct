@@ -6,14 +6,15 @@
     <meta name="description" content="PxPrfct - HomePlate w/ pure.css and angularjs">
 
     <title>PxPrfct - HomePlate</title>
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 
-    <link rel="stylesheet" href="css/layouts/marketing.css">
+    <link rel="stylesheet" href="css/layouts/marketing.css"> -->
+ 
 
   
 </head>
@@ -21,14 +22,50 @@
 
 <body>
 
-<div ng-view></div>
+<div class="row">
+	<div class="col">
+		<h1>pxprfct.com</h1>
+
+	</div>
+</div>
+<!-- <canvas id="myCircle1" width="578" height="500" style="background:yellow;"></canvas>
+<canvas id="myCircle2" width="578" height="500" style="background:yellow;"></canvas>
+ -->
+   <script type="text/javascript" src="/js/pxprfct.js"></script>
 
 
-<!-- in production you should save your dependencies in the libs folder -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/controllers/homectrl.js"></script>
+   <script type="text/javascript">
 
+   	// var pxprfctINIT = function(){
+        var init = new pxprfct.init({dev_env:true,
+            dev_host:'http://localhost:8000',
+            live_host:'http://pxprfct.com',
+            api_end_points: {},
+            api_request_headers:[{'header_one':'21231231'}, {'header_two':'34234wew'}]});
+
+        console.log('init', init);
+
+        pxprfct.callAPI('GET', 'GET_USER', {}).then(function(success){
+        	var d = JSON.stringify(success.data)
+        	var data = JSON.parse(d)
+        	console.log("api success", data);
+        }).catch(function(error){
+        	console.log("api error", error);
+        });
+        
+        // function callNetwork(){
+        //     pxprfct._UTILS_.lootsieNETWORK(['GET','POST_USER_LOCATION', {}]).then(function(success){
+        //         console.log('network success', success);
+        //     }).catch(function(error){
+        //         console.log('network error', error);
+        //     });
+        // }
+
+        // callNetwork();
+    // }
+
+    // pxprfctINIT();
+
+   </script>
 </body>
 </html>
