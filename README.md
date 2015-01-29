@@ -19,7 +19,8 @@ PxPrfct - A light JS Network Layer, I promise.
 <b>How to use pxprfct</b>
 <p>First you need to initialze the service:	</p>
 <textarea>
-
+	
+	<script type="text/javascript" src="http://pxprfct.appspot.com/app/lib/1.0.1/pxprfct.min.js"> </script>
 	var initPxprfct = new pxprfct.init({dev_env:true,
 	        dev_host:'http://localhost:8000',
 	        live_host:'http://api.pxprfct.com',
