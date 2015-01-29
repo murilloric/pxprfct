@@ -3,11 +3,8 @@
 
 
 /****************************************************************************************
-
+        pxprfct is a light network layer with promises
          ******************/
-
-
-
 
 
 var pxprfct = {}
@@ -15,7 +12,6 @@ pxprfct._PRIVATE_ = {}
 pxprfct._PRIVATE_.CONFIG;
 
 pxprfct.init = function(args){
-    console.log('init args', args.dev_env);
     this.dev_env = args.dev_env;
     this.dev_host = args.dev_host;
     this.live_host = args.live_host;
@@ -111,13 +107,6 @@ pxprfct._UTILS_.callNETWORK = function(args){
                 reject({status:request.status, message:"Error", data:[]})
             };
             request.onreadystatechange=function() {
-                // 0: request not initialized 
-                // 1: server connection established
-                // 2: request received 
-                // 3: processing request 
-                // 4: request finished and response is ready
-                console.log('req', request);
-    
                 if (request.readyState===4) {
                     
                     if(request.status === 0 || request.status >= 400){
@@ -127,21 +116,11 @@ pxprfct._UTILS_.callNETWORK = function(args){
                         var json_data = JSON.parse(data);
                         resolve({status:request.status, message:'Success', data:json_data})
                     }
-                    // var return_data = request.responseText
-                    // var check_data = JSON.parse(return_data)
-                    // var message = 'Success';
-                    // var data = check_data;
-                    // if(request.status >=400){
-                    //     message = 'Error';
-                    //     reject({status:request.status, message:message, data:data})
-                    // }else{
-                    //     resolve({status:request.status, message:message, data:data})
-                    // }
                 }
             }
         })
     }catch(e){
-        //return e;
+        return e;
     }
 }
 
@@ -166,9 +145,12 @@ pxprfct.callAPI = function(args){
             }
         });
     }catch(e){
-        //return e;
+        return e;
     }
 }
+
+
+
 
 /******************  ******************  ******************
                     POLYFILL PROMISE
@@ -187,29 +169,13 @@ pxprfct._UTILS_.polyFillPromise = function(){
 }
 
 
+if(!pxprfct._GLOBAL_._can_promise){
+    pxprfct._UTILS_.polyFillPromise();    
+}
+
+
 /******************  ******************  ******************
                   END POLYFILL PROMISE
 ******************  ******************  ******************/
-
-
-
-
-
-
-if(!pxprfct._GLOBAL_._can_promise){
-    pxprfct._UTILS_.polyFillPromise();
-        document.onreadystatechange = function(){
-        if(document.readyState === 'complete'){
-            //window.lootsieInit();
-            console.log('add polyFillPromise')
-        }
-    };      
-}else{
-    console.log('promises are supported')
-    //window.lootsieInit();
-    //window.pxprfctINIT();
-            
-}
-
 
 

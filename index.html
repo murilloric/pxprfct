@@ -1,71 +1,50 @@
 <!doctype html>
-<html lang="en" ng-app="homePlateApp">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PxPrfct - HomePlate w/ pure.css and angularjs">
+    <meta name="description" content="PxPrfct - a js network layer, I promise">
 
-    <title>PxPrfct - HomePlate</title>
+    <title>PxPrfct - A NETWORK LAYER, I PROMISE</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.min.css">
-    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-
-    <link rel="stylesheet" href="css/layouts/marketing.css"> -->
- 
-
-  
 </head>
 
 
 <body>
 
-<div class="row">
-	<div class="col">
-		<h1>pxprfct.com</h1>
+	<div class="row">
+		<div class="col">
+			<h1>pxprfct.com</h1>
 
+		</div>
 	</div>
-</div>
-<!-- <canvas id="myCircle1" width="578" height="500" style="background:yellow;"></canvas>
-<canvas id="myCircle2" width="578" height="500" style="background:yellow;"></canvas>
- -->
-   <script type="text/javascript" src="/js/pxprfct.js"></script>
+
+	<!-- LIVE FILE-->
+    <script type="text/javascript" src="/src/1.0.1/pxprfct.min.js"></script>
+
+    <!--DEV FILE-->
+    <!--<script type="text/javascript" src="/js/pxprfct.js"></script> -->
 
 
-   <script type="text/javascript">
+	<script type="text/javascript">
 
-   	// var pxprfctINIT = function(){
-        var init = new pxprfct.init({dev_env:true,
-            dev_host:'http://localhost:8000',
-            live_host:'http://pxprfct.com',
-            api_end_points: {},
-            api_request_headers:[{'header_one':'21231231'}, {'header_two':'34234wew'}]});
+	    var init = new pxprfct.init({dev_env:true,
+	        dev_host:'http://localhost:8000',
+	        live_host:'http://pxprfct.com',
+	        api_end_points: {},
+	        api_request_headers:[]});
 
-        console.log('init', init);
+	    console.log('init', init);
 
-        pxprfct.callAPI('GET', 'GET_USER', {}).then(function(success){
-        	var d = JSON.stringify(success.data)
-        	var data = JSON.parse(d)
-        	console.log("api success", data);
-        }).catch(function(error){
-        	console.log("api error", error);
-        });
-        
-        // function callNetwork(){
-        //     pxprfct._UTILS_.lootsieNETWORK(['GET','POST_USER_LOCATION', {}]).then(function(success){
-        //         console.log('network success', success);
-        //     }).catch(function(error){
-        //         console.log('network error', error);
-        //     });
-        // }
+	    pxprfct.callAPI('GET', 'GET_USER', {}).then(function(success){
+	    	var d = JSON.stringify(success.data)
+	    	var data = JSON.parse(d)
+	    	console.log("api success", data);
+	    }).catch(function(error){
+	    	console.log("api error", error);
+	    });
 
-        // callNetwork();
-    // }
-
-    // pxprfctINIT();
-
-   </script>
+	</script>
 </body>
 </html>
