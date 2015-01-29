@@ -38,8 +38,6 @@
 	    console.log('init', init);
 
 	    pxprfct.callAPI('GET', 'GET_USER', {}).then(function(success){
-	    	var d = JSON.stringify(success.data)
-	    	var data = JSON.parse(d)
 	    	console.log("api success", data);
 	    }).catch(function(error){
 	    	console.log("api error", error);
