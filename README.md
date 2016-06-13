@@ -1,3 +1,6 @@
+**** THIS IS NOT SUPPORTED ****
+**** PLEASE FEEL FREE TO BROWSE THE CODE ****
+
 PxPrfct - A light JS Network Layer, I promise.
 =======
 
@@ -20,7 +23,7 @@ PxPrfct - A light JS Network Layer, I promise.
 <p>First you need to initialize the service:	</p>
 <textarea>
 	
-	<script type="text/javascript" src="http://pxprfct.appspot.com/app/lib/1.0.1/pxprfct.min.js"> </script>
+	<script type="text/javascript" src="../app/lib/1.0.1/pxprfct.min.js"> </script>
 	var initPxprfct = new pxprfct.init({dev_env:true,
 	        dev_host:'http://localhost:8000',
 	        live_host:'http://api.pxprfct.com',
@@ -40,7 +43,7 @@ PxPrfct - A light JS Network Layer, I promise.
 	    });
 	}
 
-<p>That's it.  If you can't get it to work.  Let me know and I try to help out.</p>
+<p>This is not supported. Please feel free to browse the code.</p>
 <p>FYI. I have not tested file upload.</p> 
 <br/>
 <br/>
